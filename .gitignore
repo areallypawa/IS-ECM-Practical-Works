@@ -33,6 +33,7 @@
 *.la
 *.a
 *.lib
+.vs/
 
 # Executables
 *.exe
