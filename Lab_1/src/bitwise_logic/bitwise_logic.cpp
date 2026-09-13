@@ -1,5 +1,6 @@
 #include "bitwise_logic.h"
 #include "../utils/utils.h"
+#include "../../../MyVector/my_vector.h"
 #include <iostream>
 
 using namespace std;
@@ -106,25 +107,32 @@ void Inversion_bit(int flag) {
     short N, idx;
     cout << "\nВведи количество, сколько хочешь битов поменять? : ";
     cin >> N;
-    vector<int> arr_idx(N);
+
+    MyVector<int> arr_idx;
+    arr_idx.init();
+
     cout << "Введи " << N << " индексов через Enter\n";
+    for (int i = 0; i < N; i++) {
+        cin >> idx;
+        arr_idx.push_back(idx);
+        Create_mask(arr_idx[i], flag);
+    }
 
     switch (flag) {
     case 1:
-        for (int i(0); i < N; i++) { cin >> idx; Create_mask(idx, flag); }
         cout << "Стало число " << myFuncUnion.tool;
         Print_int_bits();
         break;
     case 2:
-        for (int i(0); i < N; i++) { cin >> idx; Create_mask(idx, flag); }
         cout << "Стало число " << myFuncUnion.num_float;
         Print_int_bits();
         break;
     case 3:
-        for (int i(0); i < N; i++) { cin >> idx; Create_mask(idx, flag); }
         cout << "Стало число " << myFuncUnion.num_double;
         Print_double_bits();
         break;
     }
+    arr_idx.free_memory();
+
     pause();
 }

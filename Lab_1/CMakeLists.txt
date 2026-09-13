@@ -6,6 +6,7 @@ add_executable(Lab_1
     utils.cpp utils.h
     bitwise_logic.cpp bitwise_logic.h
     menu.cpp menu.h
+    my_vector.h
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

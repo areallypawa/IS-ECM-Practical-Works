@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 
 const int BITS = sizeof(int) * 8;
 
@@ -9,7 +8,6 @@ union MyFuncUnion {
     int tools[2];
     double num_double;
 };
-
 
 extern MyFuncUnion myFuncUnion;
 
